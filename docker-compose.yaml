@@ -1,0 +1,23 @@
+version: "3.1"
+services:
+  task-management-bff:
+    image: task-management-bff
+    build:
+      context: ./task-management-bff
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - "./task-management-bff/src:/app/src"
+      - "./task-management-bff/node_modules:/app/node_modules"
+
+  task-management-client:
+    image: task-management-client
+    build:
+      context: ./task-management-client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./task-management-client/src:/app/src"
+      - "./task-management-client/node_modules:/app/node_modules"
