@@ -5,6 +5,7 @@ import 'dotenv/config'
 export const {
     MONGO_URI,
     TOKEN_KEY,
+    PORT,
     SALT
   } = process.env
 

@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ApiBasicAuth, SwaggerModule } from '@nestjs/swagger';
-import { corsConfig, swaggerConfig } from './configs';
+import { SwaggerModule } from '@nestjs/swagger';
+import { PORT, corsConfig, swaggerConfig } from './configs';
 import { Logger, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
@@ -16,9 +16,9 @@ async function bootstrap() {
   SwaggerModule.setup('/api/swagger', app, document);
 
   await app
-  .listen(3001)
+  .listen(PORT)
   .then(() => {
-    logger.verbose(`Appplication started on port: 3001`);
+    logger.verbose(`Appplication started on port: ${PORT}`);
   })
   .catch(err => logger.error(err));
 }

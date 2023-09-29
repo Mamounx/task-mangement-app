@@ -48,7 +48,7 @@ export class TasksService {
     try {
       const task = await this.taskModel.updateOne({_id: id}, {updatedAt: Date.now(), ...updateTaskDto})
       if (!task) {
-        throw new HttpException("No tasks were found!", HttpStatus.NOT_FOUND)
+        throw new HttpException(`No task was found with id => ${id} !`, HttpStatus.NOT_FOUND)
       }
 
       return task
@@ -59,9 +59,9 @@ export class TasksService {
 
   async remove(id: string) {
     try {
-      const task = await this.taskModel.updateOne({_id: id})
+      const task = await this.taskModel.findByIdAndDelete({_id: id})
       if (!task) {
-        throw new HttpException("No tasks were found!", HttpStatus.NOT_FOUND)
+        throw new HttpException(`No task was found with id => ${id} !`, HttpStatus.NOT_FOUND)
       }
 
       return "Task has been removed!"

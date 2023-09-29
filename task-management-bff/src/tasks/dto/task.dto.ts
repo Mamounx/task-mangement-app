@@ -2,10 +2,10 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional, IsString, IsNotEmpty, IsEnum, } from 'class-validator';
 
 export enum Status {
-    OPEN="Open",
-    INPROGRESS="In Progress",
-    CANCELLED="Canceled",
-    DONE="Done"
+    OPEN="open",
+    INPROGRESS="inprogress",
+    CANCELLED="cancelled",
+    DONE="done"
 };
 
 export class TaskDto {

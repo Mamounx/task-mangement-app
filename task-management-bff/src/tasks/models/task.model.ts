@@ -28,8 +28,19 @@ export const TaskSchema = new Schema<TaskDto>(
             required: false,
             unique: true,
         },
-    }    
- )
+    },
+
+    {
+        versionKey: false,
+        toJSON: {
+            transform(_doc, ret) {
+                ret.id = ret._id;
+                delete ret._id;
+                delete ret.__v;
+            },
+        },
+    },
+)
 
 //  TaskSchema.pre('save', async (next: any) => {
 //     const thisObj = this as any;
@@ -41,6 +52,6 @@ export const TaskSchema = new Schema<TaskDto>(
 //     }   
 //  })
 
- const TaskModel = model<TaskDto>('tasks', TaskSchema);
+const TaskModel = model<TaskDto>('tasks', TaskSchema);
 
- export default TaskModel;
+export default TaskModel;
