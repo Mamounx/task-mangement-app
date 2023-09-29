@@ -1,12 +1,17 @@
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+// redux
 import { RootState, useSelector, useDispatch } from "../../redux/store";
 import { getAllTasks } from "../../redux/slice/task";
-import { Button, Container, IconButton, Stack, Typography } from "@mui/material";
-import TaskList from "../../components/task/TaskList";
-import { useNavigate } from "react-router-dom";
 
-//icons
+// @mui/material
+import { Button, Container, IconButton, Stack, Typography } from "@mui/material";
+
+// components
+import TaskList from "../../components/task/TaskList";
+
+// icons
 import ListIcon from '@mui/icons-material/List';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import TaskGrid from "../../components/task/TaskGrid";

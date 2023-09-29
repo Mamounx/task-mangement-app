@@ -1,12 +1,13 @@
-
-
-// ----------------------------------------------------------------------
-
+// @mui/material
 import { Grid, Typography } from "@mui/material";
+
+// @types
 import { Task } from "../../@types/task";
 
 // icons
 import TaskCard from "./TaskCard";
+
+// ----------------------------------------------------------------------
 
 type Props = {
     tasks?: Task[] | null

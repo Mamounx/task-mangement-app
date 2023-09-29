@@ -1,6 +1,15 @@
-import { Box, Card, CardHeader, Checkbox, Chip, Divider, FormControlLabel, IconButton, MenuItem, Popover, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from "react-router-dom";
+
+// redux
+import { useDispatch } from "../../redux/store";
+import { deleteTaskById, getTaskById, updateTaskById } from "../../redux/slice/task";
+
+// @mui/material
+import { Box, Card, CardHeader, Checkbox, Chip, Divider, FormControlLabel, IconButton, MenuItem, Popover, Stack, Typography } from "@mui/material";
+
+// @types
 import { Status, Task } from "../../@types/task";
 
 // icons
@@ -8,10 +17,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
-import { useNavigate } from "react-router-dom";
+
+// utils
 import { fDate } from "../../utils/formatDate";
-import { useDispatch } from "../../redux/store";
-import { deleteTaskById, getTaskById, updateTaskById } from "../../redux/slice/task";
 
 // ----------------------------------------------------------------------
 

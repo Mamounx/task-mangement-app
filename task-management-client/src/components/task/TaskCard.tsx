@@ -1,14 +1,22 @@
+import { useNavigate } from "react-router-dom";
+// redux
+import { useDispatch } from "../../redux/store";
+import { deleteTaskById, getTaskById, updateTaskById } from "../../redux/slice/task";
+
+// @mui/material
 import { Card, CardActionArea, CardActions, CardContent, CardHeader, Chip, IconButton, Typography } from "@mui/material";
+
+// @types
+import { Status } from "../../@types/task";
 
 // icons
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
-import { Status } from "../../@types/task";
+
+// utils
 import { fDate } from "../../utils/formatDate";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "../../redux/store";
-import { deleteTaskById, getTaskById, updateTaskById } from "../../redux/slice/task";
+
 // ----------------------------------------------------------------------
 
 type TaskCardProps = {

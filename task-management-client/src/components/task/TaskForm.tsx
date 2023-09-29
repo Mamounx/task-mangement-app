@@ -1,9 +1,15 @@
 
-import { Button, Card, CardActions, CardContent, CardHeader, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+// redux
 import { createTask, updateTaskById } from "../../redux/slice/task";
 import { RootState, useDispatch, useSelector } from "../../redux/store";
+
+// @mui/material
+import { Button, Card, CardActions, CardContent, CardHeader, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
+
+// @types
 import { Status } from "../../@types/task";
 
 // ----------------------------------------------------------------------
@@ -78,9 +84,6 @@ export default function TaskForm({ isEdit = false }: Props) {
                 label="Status"
                 onChange={handleChangeStatus}
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
                 <MenuItem value={'cancelled'}>{Status.CANCELLED}</MenuItem>
                 <MenuItem value={'open'}>{Status.OPEN}</MenuItem>
                 <MenuItem value={'inprogress'}>{Status.INPROGRESS}</MenuItem>

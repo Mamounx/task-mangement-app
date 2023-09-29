@@ -9,7 +9,7 @@ import { dispatch } from '../store';
 // ----------------------------------------------------------------------
 
 const initialState: TaskState = {
-    isLoading: false,
+  isLoading: false,
   error: null,
   tasks: null,
   task: null,
@@ -108,7 +108,7 @@ export function updateTaskById(task: Task) {
     console.log(task)
     try {
       await axios.patch(`/tasks/${task.id}`, task);
-      
+
     } catch (error) {
       console.error(error);
       dispatch(slice.actions.hasError(error));
@@ -123,7 +123,7 @@ export function deleteTaskById(id: any) {
     dispatch(slice.actions.startLoading());
     try {
       await axios.delete(`/tasks/${id}`);
-      
+
     } catch (error) {
       console.error(error);
       dispatch(slice.actions.hasError(error));
