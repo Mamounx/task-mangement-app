@@ -21,7 +21,7 @@ export default function TaskGrid({ tasks }: Props) {
                 </Grid>
             )) : (
                 <Grid item xs={12}>
-                    <Typography textAlign='center' variant="h3">No tasks available!</Typography>
+                    <Typography textAlign='center' variant="h4">No tasks available!</Typography>
                 </Grid>)}
         </Grid>
     )

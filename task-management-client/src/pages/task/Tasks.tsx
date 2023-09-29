@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { RootState, useSelector, useDispatch } from "../../redux/store";
 import { getAllTasks } from "../../redux/slice/task";
-import { Button, Container, IconButton, Stack } from "@mui/material";
+import { Button, Container, IconButton, Stack, Typography } from "@mui/material";
 import TaskList from "../../components/task/TaskList";
 import { useNavigate } from "react-router-dom";
 
@@ -42,6 +42,7 @@ export default function Tasks() {
           direction="column"
           spacing={2}
         >
+          <Typography variant="h3">Tasks</Typography>
           <Stack
             direction="row"
             justifyContent="space-between"

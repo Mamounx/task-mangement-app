@@ -51,7 +51,7 @@ export default function TaskList({ tasks }: Props) {
                   <Divider variant="middle" />
                 </Box>
               )) :
-                <Typography>No tasks available!</Typography>}
+                <Typography textAlign='center' variant="h4">No tasks available!</Typography>}
             </>
           );
         }}
